@@ -1,1 +1,1 @@
-This repository contains my solutions to the exercises and projects from the Guide DAO Solidity Development Course.
+This repository contains my solutions and notes from various courses and resources on Solidity development.
