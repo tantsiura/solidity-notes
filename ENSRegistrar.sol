@@ -2,7 +2,9 @@
 pragma solidity ^0.8.0;
 
 //ENS Domain Registrar Smart Contract
+
 //Create a Solidity smart contract for an ENS (Ethereum Name Service) domain registrar with the following features:
+
 //- A function to register a string (domain name) and associate it with a structure containing:
 //- User's address
 //- Registration timestamp
