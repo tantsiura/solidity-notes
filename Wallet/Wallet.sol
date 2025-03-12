@@ -12,12 +12,15 @@ contract Wallet is SharedWallet {
 
     // Function to withdraw money, restricted by ownerOrWithinLimits modifier
     function withdrawMoney(uint _amount) public ownerOrWithinLimits(_amount) {
+        // Check if there are sufficient funds in the contract
         require(_amount <= address(this).balance, "Not enough funds to withdraw!");
         
         if(!isOwner()) {
+            // Deduct from the user's limit if they are not the owner
             deduceFromLimit(_msgSender(), _amount);
         }
         
+        // Transfer the funds to the user
         address payable _to = payable(_msgSender());
         _to.transfer(_amount);
         
@@ -26,6 +29,7 @@ contract Wallet is SharedWallet {
 
     // Function to send Ether to the contract
     function sendToContract() public payable {
+        // Transfer the Ether to the contract
         address payable _to = payable(this);
         _to.transfer(msg.value);
         
