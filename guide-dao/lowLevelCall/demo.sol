@@ -1,4 +1,3 @@
-
 // SPDX-License-Identifier: MIT
 
 pragma solidity ^0.8.0;
@@ -6,9 +5,9 @@ pragma solidity ^0.8.0;
 contract Demo {
     string public name = "John";
     uint public age = 30;
-    mappint (address => uint) public payments;
-    
-    function setData(string calldata _newName, uint _newAge) {
+    mapping(address => uint) public payments;
+
+    function setData(string calldata _newName, uint _newAge) public {
         name = _newName;
         age = _newAge;
     }
@@ -20,5 +19,4 @@ contract Demo {
     function pay(address _payer) external payable {
         payments[_payer] = msg.value;
     }
-
 }
