@@ -1,11 +1,10 @@
 // SPDX-License-Identifier: MIT
-
 pragma solidity ^0.8.0;
 
-
 contract Owned {
+    address public owner;
 
-    constructor {
+    constructor() {
         owner = msg.sender;
     }
 
