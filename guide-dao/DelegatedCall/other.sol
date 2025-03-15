@@ -15,15 +15,11 @@ contract Other {
     }
 
     function callPay(address _demo) external payable {
-        (bool result) = _demo.delegetecall(
-            // abi.encodeWithSignature(
-            //     "pay(string)"
-            // )
+        (bool result) = _demo.delegatecall(
             abi.encodeWithSelector(
-                IDemo.pay.Selector;
+                IDemo.pay.selector
             )
         );
         require(result, "failed");
     }
-
 }
